@@ -80,6 +80,9 @@ export class Client {
   }
 
   async custom(payload: string) {
+    core.debug("here in custom")
+    core.debug(payload)
+    core.debug("after payload")
     await this.fieldFactory.attachments();
     /* eslint-disable no-var */
     var template: IncomingWebhookSendArguments = eval(`template = ${payload}`);
