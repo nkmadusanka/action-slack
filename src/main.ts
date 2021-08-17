@@ -59,7 +59,8 @@ async function run(): Promise<void> {
         await client.send(await client.prepare(text));
         break;
       case Custom:
-        await client.send(await client.custom(custom_payload));
+        const pl = await client.custom(custom_payload);
+        await client.send(JSON.stringify(pl));
         break;
       default:
         throw new Error(
