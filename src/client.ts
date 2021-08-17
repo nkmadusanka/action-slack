@@ -91,10 +91,8 @@ export class Client {
 
     core.debug(template as string);
 
-    core.debug(template.username as unknown as string)
-
     core.debug("after parse")
-    core.debug(template.attachments[0].text as string);
+    core.debug(typeof template);
     /* eslint-enable */
     return template;
   }
