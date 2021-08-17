@@ -87,9 +87,9 @@ export class Client {
     await this.fieldFactory.attachments();
     /* eslint-disable no-var */
     // var template: IncomingWebhookSendArguments = eval(`template = ${payload}`);
-    var template: IncomingWebhookSendArguments = JSON.parse(JSON.stringify(payload));
+    const template: IncomingWebhookSendArguments = JSON.parse(JSON.stringify(payload));
 
-    core.debug(template as string);
+    core.debug(JSON.parse(template as string));
 
     core.debug("after parse")
     core.debug(typeof template);
