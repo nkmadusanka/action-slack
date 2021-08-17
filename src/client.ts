@@ -89,6 +89,8 @@ export class Client {
     // var template: IncomingWebhookSendArguments = eval(`template = ${payload}`);
     var template: IncomingWebhookSendArguments = JSON.parse(JSON.stringify(payload));
 
+    core.debug(template as string);
+
     core.debug("after parse")
     core.debug(template.attachments[0].text as string);
     /* eslint-enable */
