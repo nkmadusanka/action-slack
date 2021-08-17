@@ -82,9 +82,9 @@ export class Client {
   async custom(payload: string) {
     await this.fieldFactory.attachments();
     /* eslint-disable no-var */
-    // var template = eval(`template = ${payload}`);
+    var template = eval(`template = ${payload}`);
     /* eslint-enable */
-    return payload;
+    return template;
   }
 
   async prepare(text: string) {
@@ -95,7 +95,7 @@ export class Client {
   }
 
   async send(payload: string | IncomingWebhookSendArguments) {
-    core.debug(JSON.stringify(context, null, 2));
+    core.info(JSON.stringify(payload, null, 2));
     await this.webhook.send(payload);
     core.debug('send message');
   }
