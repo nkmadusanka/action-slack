@@ -27,7 +27,7 @@ jobs:
                 "url": "https://api.github.com/repos/xeneta/pi/git/commits/9cf79ea8e9884ea9ade0b9b450b7f5aea023533a"
               },
               "tag": "r410.0",
-              "message": "test",
+              "message": "Release r410.0\n\n- Add contract length to query params in MT actions\n- IQ maintenance\n- Add `ElevioClient` wrapper to `@intarwebs/monitoring-tools`\n- Update `pre-commit` config to support multiple `eslint` checks\n- Add `.eslintrc.json` to `@intarwebs/legacy-design-system`\n- Add `.eslintrc.json` to `@intarwebs/legacy-authentication-pages`\n- Add `.eslintrc.json` to `@intarwebs/legacy-account-pages`\n- Add `.eslintrc.json` to `@intarwebs/admin`\n- Add `.eslintrc.json` to `@intarwebs/monolith`\n- Add `webpack.resolve.js` to `@intarwebs/legacy-libraries`\n\n45 files changed, 902 insertions(+), 846 deletions(-)\n",
               "verification": {
                 "verified": false,
                 "reason": "unsigned",
