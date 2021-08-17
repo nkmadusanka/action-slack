@@ -36,18 +36,8 @@ jobs:
               }
             }
         with:
-          status: custom
-          custom_payload: |
-            {
-              username: '${{github.event.sender.login}}',
-              icon_url: '${{github.event.sender.avatar_url}}',
-              channel: 'tech',
-              attachments: [
-                {
-                  color: 'green',
-                  title: 'Release tag created: test',
-                  title_link: 'https://github.com/xeneta/pi/releases/tag/test',
-                  text: "${{ fromJson(env.info).message }}"
-                }
-              ]
-            }
+          tag_sha: "1fc11000fdfb43a3e9f1b7620ba8ca7c054bac7d"
+          username: ${{github.event.sender.login}}
+          icon_url: ${{github.event.sender.avatar_url}}
+          color: green
+
