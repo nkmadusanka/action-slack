@@ -82,7 +82,7 @@ export class Client {
   async custom(payload: string) {
     await this.fieldFactory.attachments();
     /* eslint-disable no-var */
-    var template: IncomingWebhookSendArguments = eval(`template = ${payload}`);
+    var template = `template = ${payload}`;
     /* eslint-enable */
     return template;
   }
