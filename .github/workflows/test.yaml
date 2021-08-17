@@ -11,30 +11,7 @@ jobs:
         uses: nkmadusanka/action-slack@master
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          info: |
-            {
-              "node_id": "MDM6VGFnNjgyOTIxMDoxZmMxMTAwMGZkZmI0M2EzZTlmMWI3NjIwYmE4Y2E3YzA1NGJhYzdk",
-              "sha": "1fc11000fdfb43a3e9f1b7620ba8ca7c054bac7d",
-              "url": "https://api.github.com/repos/xeneta/pi/git/tags/1fc11000fdfb43a3e9f1b7620ba8ca7c054bac7d",
-              "tagger": {
-                "name": "nkmadusanka",
-                "email": "niroshana.madusanka@xeneta.com",
-                "date": "2021-08-12T11:48:49Z"
-              },
-              "object": {
-                "sha": "9cf79ea8e9884ea9ade0b9b450b7f5aea023533a",
-                "type": "commit",
-                "url": "https://api.github.com/repos/xeneta/pi/git/commits/9cf79ea8e9884ea9ade0b9b450b7f5aea023533a"
-              },
-              "tag": "r410.0",
-              "message": "Release r410.0\n\n- Add contract length to query params in MT actions\n- IQ maintenance\n- Add `ElevioClient` wrapper to `@intarwebs/monitoring-tools`\n- Update `pre-commit` config to support multiple `eslint` checks\n- Add `.eslintrc.json` to `@intarwebs/legacy-design-system`\n- Add `.eslintrc.json` to `@intarwebs/legacy-authentication-pages`\n- Add `.eslintrc.json` to `@intarwebs/legacy-account-pages`\n- Add `.eslintrc.json` to `@intarwebs/admin`\n- Add `.eslintrc.json` to `@intarwebs/monolith`\n- Add `webpack.resolve.js` to `@intarwebs/legacy-libraries`\n\n45 files changed, 902 insertions(+), 846 deletions(-)\n",
-              "verification": {
-                "verified": false,
-                "reason": "unsigned",
-                "signature": null,
-                "payload": null
-              }
-            }
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_sha: "1fc11000fdfb43a3e9f1b7620ba8ca7c054bac7d"
           username: ${{github.event.sender.login}}

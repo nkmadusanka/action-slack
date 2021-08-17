@@ -11,26 +11,26 @@ async function run(): Promise<void> {
     const color = core.getInput('color');
 
     const octokit = new Octokit();
-    const response = await octokit.request("GET /repos/xeneta/pi/git/tags/{tag_sha}", {
-      tag_sha,
-    });
+    const response = await octokit.request(`GET /repos/xeneta/pi/git/tags/${tag_sha}`);
 
     core.debug(response.data)
 
-    // const webHook = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
+    const webHook = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
 
-    // const payload = {
-    //   username,
-    //   icon_url,
-    //   channel,
-    //   attachments: [{
-    //     color,
-    //     title: `Release tag created: ${response.data}`
-    //   }]
-    // }
+    const payload = {
+      username,
+      icon_url,
+      channel,
+      attachments: [{
+        color,
+        title: `Release tag created: ${response.data.tag}`,
+        title_link: `https://github.com/xeneta/pi/releases/tag/${response.data.tag}`,
+        test: response.data.message,
+      }],
+    };
 
     // const pl = await client.custom(custom_payload);
-    // await client.send(pl);
+    await webHook.send(payload);
 
   } catch (error) {
     core.setFailed(error.message);
