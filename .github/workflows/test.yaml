@@ -1,10 +1,14 @@
 on:
-  workflow_dispatch: 
+  push:
+    branches:
+      - "!*"
+    tags:
+      - "r*"
     
-name: Pi release
+name: Release notification
 jobs:
-  niro:
-    name: niro test
+  notification:
+    name: Notify on Slack
     runs-on: ubuntu-latest
     steps:
       - name: Notify Slack
@@ -13,8 +17,10 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_sha: "1fc11000fdfb43a3e9f1b7620ba8ca7c054bac7d"
+          tag_sha: ${{github.event.after}}
           username: ${{github.event.sender.login}}
           icon_url: ${{github.event.sender.avatar_url}}
           color: green
+          owner: nkmadusanka
+          repo: action-slack
 

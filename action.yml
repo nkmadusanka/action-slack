@@ -22,6 +22,14 @@ inputs:
     description: color
     default: ""
     required: false
+  owner:
+    description: repo owner
+    default: ""
+    required: false
+  repo:
+    description: the repo
+    default: ""
+    required: false
 runs:
   using: node12
   main: dist/index.js

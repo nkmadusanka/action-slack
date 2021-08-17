@@ -9,9 +9,12 @@ async function run(): Promise<void> {
     const channel = core.getInput('channel');
     const tag_sha = core.getInput('tag_sha');
     const color = core.getInput('color');
+    const owner = core.getInput('owner');
+    const repo = core.getInput('repo');
 
     const octokit = new Octokit();
-    const response = await octokit.request(`GET /repos/xeneta/pi/git/tags/${tag_sha}`);
+    core.debug(`sending octokit request to GET /repos/${owner}/${repo}/git/tags/${tag_sha}`)
+    const response = await octokit.request(`GET /repos/${owner}/${repo}/git/tags/${tag_sha}`);
 
     core.debug(response.data)
 
@@ -24,12 +27,11 @@ async function run(): Promise<void> {
       attachments: [{
         color,
         title: `Release tag created: ${response.data.tag}`,
-        title_link: `https://github.com/xeneta/pi/releases/tag/${response.data.tag}`,
+        title_link: `https://github.com/${owner}/${repo}/releases/tag/${response.data.tag}`,
         test: response.data.message,
       }],
     };
 
-    // const pl = await client.custom(custom_payload);
     await webHook.send(payload);
 
   } catch (error) {
