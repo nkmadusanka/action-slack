@@ -91,6 +91,8 @@ export class Client {
 
     core.debug(template as string);
 
+    core.debug(template.attachments as unknown as string)
+
     core.debug("after parse")
     core.debug(template.attachments[0].text as string);
     /* eslint-enable */
