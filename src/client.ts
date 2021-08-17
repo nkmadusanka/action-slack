@@ -82,7 +82,7 @@ export class Client {
   async custom(payload: string) {
     await this.fieldFactory.attachments();
     /* eslint-disable no-var */
-    var template = `template = ${payload.replace('`', "#")}`;
+    var template = `template = ${payload}`;
     /* eslint-enable */
     return template;
   }
