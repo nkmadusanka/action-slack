@@ -80,15 +80,10 @@ export class Client {
   }
 
   async custom(payload: string) {
-    core.debug("in custom")
-    core.info(payload)
     await this.fieldFactory.attachments();
     /* eslint-disable no-var */
-    var template = JSON.parse(JSON.stringify(payload));
+    var template: IncomingWebhookSendArguments = eval(`template = ${payload}`);
     /* eslint-enable */
-
-    core.debug("template: " + template)
-
     return template;
   }
 
@@ -100,7 +95,7 @@ export class Client {
   }
 
   async send(payload: string | IncomingWebhookSendArguments) {
-    core.info(JSON.stringify(payload, null, 2));
+    core.debug(JSON.stringify(context, null, 2));
     await this.webhook.send(payload);
     core.debug('send message');
   }
