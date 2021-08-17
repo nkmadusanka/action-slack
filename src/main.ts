@@ -60,7 +60,7 @@ async function run(): Promise<void> {
         break;
       case Custom:
         const pl = await client.custom(custom_payload);
-        await client.send(pl);
+        // await client.send(pl);
         break;
       default:
         throw new Error(
