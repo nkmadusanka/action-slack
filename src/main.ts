@@ -12,7 +12,7 @@ async function run(): Promise<void> {
     const icon_emoji = core.getInput('icon_emoji');
     const icon_url = core.getInput('icon_url');
     const channel = core.getInput('channel');
-    const custom_payload = "Release r410.0\n\n- Add contract length to query params in MT actions\n- IQ maintenance\n- Add `ElevioClient` wrapper to `@intarwebs/monitoring-tools`\n- Update `pre-commit` config to support multiple `eslint` checks\n- Add `.eslintrc.json` to `@intarwebs/legacy-design-system`\n- Add `.eslintrc.json` to `@intarwebs/legacy-authentication-pages`\n- Add `.eslintrc.json` to `@intarwebs/legacy-account-pages`\n- Add `.eslintrc.json` to `@intarwebs/admin`\n- Add `.eslintrc.json` to `@intarwebs/monolith`\n- Add `webpack.resolve.js` to `@intarwebs/legacy-libraries`\n\n45 files changed, 902 insertions(+), 846 deletions(-)\n";
+    const custom_payload = core.getInput('custom_payload');
     const payload = core.getInput('payload');
     const fields = core.getInput('fields');
     const job_name = core.getInput('job_name');
