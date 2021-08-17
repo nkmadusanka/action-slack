@@ -10,7 +10,7 @@ jobs:
       - name: Notify Slack
         uses: nkmadusanka/action-slack@master
         env:
-          SLACK_WEBHOOK_URL: 'https://hooks.slack.com/services/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'
+          SLACK_WEBHOOK_URL: 'https://hooks.slack.com/services/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'
           info: |
             {
               "node_id": "MDM6VGFnNjgyOTIxMDoxZmMxMTAwMGZkZmI0M2EzZTlmMWI3NjIwYmE4Y2E3YzA1NGJhYzdk",
@@ -39,6 +39,9 @@ jobs:
           status: custom
           custom_payload: |
             {
+              username: '${{github.event.sender.login}}',
+              icon_url: '${{github.event.sender.avatar_url}}',
+              channel: 'tech',
               attachments: [
                 {
                   color: 'green',
