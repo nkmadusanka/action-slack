@@ -80,10 +80,14 @@ export class Client {
   }
 
   async custom(payload: string) {
+    core.debug("in custom")
     await this.fieldFactory.attachments();
     /* eslint-disable no-var */
     var template = eval(`template = ${payload}`);
     /* eslint-enable */
+
+    core.debug("template: " + template)
+
     return template;
   }
 
