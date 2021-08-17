@@ -95,7 +95,7 @@ export class Client {
   }
 
   async send(payload: string | IncomingWebhookSendArguments) {
-    core.info(JSON.stringify(context, null, 2));
+    core.debug(JSON.stringify(context, null, 2));
     await this.webhook.send(payload);
     core.debug('send message');
   }

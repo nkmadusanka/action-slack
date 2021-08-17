@@ -39,8 +39,8 @@ jobs:
           status: custom
           custom_payload: |
             {
-              username: 'niro',
-              icon_url: 'google.com',
+              username: '${{github.event.sender.login}}',
+              icon_url: '${{github.event.sender.avatar_url}}',
               channel: 'tech',
               attachments: [
                 {
