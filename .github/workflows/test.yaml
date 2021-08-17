@@ -10,6 +10,7 @@ jobs:
       - name: Notify Slack
         uses: nkmadusanka/action-slack@master
         env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           info: |
             {
               "node_id": "MDM6VGFnNjgyOTIxMDoxZmMxMTAwMGZkZmI0M2EzZTlmMWI3NjIwYmE4Y2E3YzA1NGJhYzdk",
