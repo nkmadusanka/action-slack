@@ -60,7 +60,7 @@ async function run(): Promise<void> {
         break;
       case Custom:
         const pl = await client.custom(custom_payload);
-        core.info("payload: " + pl.toString());
+        core.info("payload: " + JSON.stringify(payload));
         await client.send(pl);
         break;
       default:
