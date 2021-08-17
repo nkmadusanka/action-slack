@@ -84,8 +84,7 @@ export class Client {
     core.info(payload)
     await this.fieldFactory.attachments();
     /* eslint-disable no-var */
-    // var template = eval(`template = ${payload}`);
-    var template = JSON.parse(JSON.stringify(payload));
+    var template = eval(`template = ${JSON.parse(JSON.stringify(payload))}`);
     /* eslint-enable */
 
     core.debug("template: " + template)
