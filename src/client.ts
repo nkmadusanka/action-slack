@@ -83,10 +83,14 @@ export class Client {
     core.debug("here in custom")
     core.debug(payload)
     core.debug("after payload")
+
     await this.fieldFactory.attachments();
     /* eslint-disable no-var */
-    var template: IncomingWebhookSendArguments = eval(`template = ${payload}`);
-    // var template: IncomingWebhookSendArguments = JSON.parse(JSON.stringify(payload));
+    // var template: IncomingWebhookSendArguments = eval(`template = ${payload}`);
+    var template: IncomingWebhookSendArguments = JSON.parse(JSON.stringify(payload));
+
+    core.debug("after parse")
+    core.debug(template.attachments[0].text as string);
     /* eslint-enable */
     return template;
   }
