@@ -49,7 +49,7 @@ async function run(): Promise<void> {
       },
       github_token,
       github_base_url,
-      process.env.SLACK_WEBHOOK_URL,
+      "https://hooks.slack.com/services/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",
     );
 
     switch (status) {
