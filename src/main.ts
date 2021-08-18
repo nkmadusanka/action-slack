@@ -28,7 +28,7 @@ async function run(): Promise<void> {
         color,
         title: `Release tag created: ${response.data.tag}`,
         title_link: `https://github.com/${owner}/${repo}/releases/tag/${response.data.tag}`,
-        test: response.data.message,
+        text: response.data.message,
       }],
     };
 
