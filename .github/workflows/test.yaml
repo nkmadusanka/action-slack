@@ -17,10 +17,10 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_sha: ${{github.event.after}}
-          username: ${{github.event.sender.login}}
-          icon_url: ${{github.event.sender.avatar_url}}
-          color: green
-          owner: nkmadusanka
+          tag_sha: '${{github.event.after}}'
+          username: '${{github.event.sender.login}}'
+          icon_url: '${{github.event.sender.avatar_url}}'
+          color: 'green'
+          owner: 'nkmadusanka'
           repo: action-slack
 
